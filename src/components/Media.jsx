@@ -2,7 +2,7 @@
 import React from "react"
 import Card from "./Card"
 
-export default props => {
+function Media(props) {
     const {min, max} = props
     return (
         <Card title="Média dos Números" green>
@@ -15,3 +15,12 @@ export default props => {
         </Card>
     )
 }
+
+function mapStateToProps(state) {
+    return {
+        min: state.numeros.min,
+        max: state.numeros.max
+    }
+}
+
+export default connect(mapState)(Media)

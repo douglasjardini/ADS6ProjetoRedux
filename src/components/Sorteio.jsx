@@ -2,7 +2,7 @@
 import React from "react"
 import Card from "./Card"
 
-export default props => {
+function Sorteio(props) {
     const {min, max} = props
     const aleatorio = parseInt(Math.random() * (max-min)) + min
     return (
@@ -16,3 +16,11 @@ export default props => {
         </Card>
     )
 }
+function mapStateToProps(state) {
+    return {
+        min: state.numeros.min,
+        max: state.numeros.max
+    }
+}
+
+export default connect(mapState)(Sorteio)
