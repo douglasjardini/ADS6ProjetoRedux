@@ -2,6 +2,8 @@
 import React from "react"
 import Card from "./Card"
 
+import { connect } from "react-redux"
+
 function Sorteio(props) {
     const {min, max} = props
     const aleatorio = parseInt(Math.random() * (max-min)) + min
@@ -23,4 +25,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapState)(Sorteio)
+export default connect(mapStateToProps)(Sorteio)

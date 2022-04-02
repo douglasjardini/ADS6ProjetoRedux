@@ -2,6 +2,8 @@
 import React from "react"
 import Card from "./Card"
 
+import { connect } from "react-redux"
+
 function Media(props) {
     const {min, max} = props
     return (
@@ -23,4 +25,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapState)(Media)
+export default connect(mapStateToProps)(Media)

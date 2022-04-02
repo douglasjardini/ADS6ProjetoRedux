@@ -2,6 +2,8 @@
 import React from "react"
 import Card from "./Card"
 
+import { connect } from "react-redux"
+
 function Soma(props) {
     const {min, max} = props
     return (
@@ -22,4 +24,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapState)(Soma)
+export default connect(mapStateToProps)(Soma)
